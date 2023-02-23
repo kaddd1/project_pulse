@@ -43,14 +43,14 @@ $(document).ready(function(){
 
     function toggleSlide(item) {
         $(item).each(function(i) {
-                $(this).on('click', function(e) {
+            $(this).on('click', function(e) {
                 e.preventDefault();
-                $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active')
-                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active')
+                $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
+                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
             })
-        })
-    }
+        });
+    };
 
-    toggleSlide('.catalog-item__link')
-    toggleSlide('.catalog_item__back')
+    toggleSlide('.catalog-item__link');
+    toggleSlide('.catalog-item__back');
 });
