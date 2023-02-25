@@ -259,6 +259,9 @@
 .feed-form input:nth-child(3) {
   margin-bottom: 30px;
 }
+.feed-form_mt25 {
+  margin-top: 25px;
+}
 
 .carousel {
   padding: 81px 0;
@@ -596,6 +599,55 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.overlay .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 380px;
+  min-height: 400px;
+  background-color: #f2f2f2;
+  padding: 38px 40px 40px 40px;
+}
+.overlay .modal .modal__close {
+  position: absolute;
+  top: 0;
+  right: -40px;
+  font-size: 41px;
+  line-height: 21px;
+  cursor: pointer;
+  color: #c70101;
+}
+.overlay .modal .modal__subtitle {
+  font-weight: 700;
+  font-size: 19px;
+  text-align: center;
+  color: #0D0D0D;
+}
+.overlay .modal .modal__text {
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #0D0D0D;
+}
+.overlay .modal_mini {
+  min-height: 160px;
+}
+
+#consultation, #order, #thanks {
+  display: none;
 }
 
 @media (max-width: 993px) {
