@@ -25,22 +25,6 @@ $(document).ready(function(){
             .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
     });
 
-    // $('.catalog-item__link').each(function(i) {
-    //     $(this).on('click', function(e) {
-    //         e.preventDefault();
-            // $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active')
-            // $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active')
-    //     })
-    // })
-
-    // $('.catalog-item__back').each(function(i) {
-    //     $(this).on('click', function(e) {
-    //         e.preventDefault();
-    //         $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active')
-    //         $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active')
-    //     })
-    // })
-
     function toggleSlide(item) {
         $(item).each(function(i) {
             $(this).on('click', function(e) {
@@ -54,7 +38,8 @@ $(document).ready(function(){
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
 
-    //model
+    //modal
+
     $('[data-modal=consultation]').on('click', function() {
         $('.overlay, #consultation').fadeIn('fast');
     });
@@ -73,4 +58,38 @@ $(document).ready(function(){
             $('.overlay, #order').fadeIn('fast');  
         });
     });
+
+    //validate:3
+
+    function validateForm(form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 6
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Пожалуйста, введите свое имя",
+                    minlength: jQuery.validator.format("Введите {0} символов!")
+                },
+                phone: "Пожалуйста, введите свой номер телефона",
+                email: {
+                    required: "Пожалуйста, введите свою почту",
+                    email: "Неправильно введен адрес почты"
+                }
+            }
+        });
+    };
+    
+    validateForm('.order-form');
+    validateForm('.consultation-form');
+
+    $("input[name=phone]").mask("+998 (000) 000-00-00");
 });
