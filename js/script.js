@@ -90,6 +90,30 @@ $(document).ready(function(){
     
     validateForm('.order-form');
     validateForm('.consultation-form');
+    validateForm('.consultate-form');
 
-    $("input[name=phone]").mask("+998 (000) 000-00-00");
+    $("input[name=phone]").inputmask({
+        mask: "(999) 999-99-99",
+        showMaskOnHover: false
+    });
+    
+    $('form').submit(function(e) {
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+            $('form').trigger('reset')
+        });
+        return false;
+    });
 });
