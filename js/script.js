@@ -116,4 +116,19 @@ $(document).ready(function(){
         });
         return false;
     });
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1600) {
+            $('.scroll-up').fadeIn();
+        } else {
+            $('.scroll-up').fadeOut();
+        }
+    });
+
+    $('a[href^="#"]').click(function() {
+        $('html, body').animate({
+            scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+        }, 500);
+        return false;
+    });
 });

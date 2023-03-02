@@ -33,3 +33,17 @@
                 font-size: 14px
                 text-align: center
                 color: $main-color
+
+    // Моя первая анимация!!!
+
+    & &__wrapper
+        .advantage__block
+            &:nth-child(2)
+                .advantage__block__img
+                    animation: heartbeat 1s ease infinite alternate-reverse
+                    // animation-name: bounce 
+                    // animation-duration: 1s
+                    // animation-timing-function: ease
+                    // animation-iteration-count: infinite
+                    &:hover
+                        animation-play-state: paused
