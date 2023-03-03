@@ -606,6 +606,14 @@
 .reviews .reviews__around {
   margin-right: 61px;
 }
+.reviews .reviews__around:hover {
+  -webkit-animation-name: swing;
+          animation-name: swing;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
 .reviews .reviews__username, .reviews .reviews__stats, .reviews .reviews__text {
   line-height: 30px;
 }
