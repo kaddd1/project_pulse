@@ -93,9 +93,9 @@
             color: #050505
         &__wrapper
             display: flex
-            width: calc(200% + 40px)
+            width: 560px
         &__content
-            width: 50%
+            width: 260px
             margin-right: 0px
             transform: translateX(-110%)
             transition: 0.5s all
@@ -103,34 +103,36 @@
                 margin-right: 20px
                 transform: translateX(0%)
         &__list
-            width: 50%
-            margin-left: 20px
+            width: 280px
+            min-height: 352px
             transform: translateX(0%)
             transition: 0.5s all
-            padding-left: 0
-            margin-bottom: 0
             list-style-type: none
             padding-left: 16px
             padding-right: 20px
             &_active
-                margin-left: 0px   
+                width: 280px
+                margin-left: 20px
                 transform: translateX(-100%)
-            li
-                position: relative
-                margin-bottom: 20px
-                font-weight: 300
-                font-size: 17px
-                line-height: 21px
-                display: flex
-                color: #555555
-                &::before
-                    content: ''
-                    position: absolute
-                    background-color: $main-color
-                    left: -20px
-                    top: 8px
-                    min-width: 6px
-                    min-height: 6px
+                ul
+                    padding-left: 0
+                    margin-bottom: 0
+                    li
+                        position: relative
+                        margin-bottom: 20px
+                        font-weight: 300
+                        font-size: 17px
+                        line-height: 21px
+                        display: flex
+                        color: #555555
+                        &::before
+                            content: ''
+                            position: absolute
+                            background-color: $main-color
+                            left: -20px
+                            top: 8px
+                            min-width: 6px
+                            min-height: 6px
         &__back
             position: absolute
             font-weight: 500
@@ -138,7 +140,7 @@
             text-align: center
             text-transform: uppercase
             text-decoration-line: underline
-            bottom: 0px
+            bottom: 10px
             left: 50%
             transform: translateX(calc(-50% - 10px))
             color: #C70101

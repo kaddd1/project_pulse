@@ -158,7 +158,6 @@
   font-size: 12px;
   text-align: center;
   color: #FFFFFF;
-  margin-right: 2px;
 }
 .header .header__official span {
   display: block;
@@ -501,10 +500,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: calc(200% + 40px);
+  width: 560px;
 }
 .catalog-item__content {
-  width: 50%;
+  width: 260px;
   margin-right: 0px;
   -webkit-transform: translateX(-110%);
           transform: translateX(-110%);
@@ -517,24 +516,27 @@
           transform: translateX(0%);
 }
 .catalog-item__list {
-  width: 50%;
-  margin-left: 20px;
+  width: 280px;
+  min-height: 352px;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
-  padding-left: 0;
-  margin-bottom: 0;
   list-style-type: none;
   padding-left: 16px;
   padding-right: 20px;
 }
 .catalog-item__list_active {
-  margin-left: 0px;
+  width: 280px;
+  margin-left: 20px;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
 }
-.catalog-item__list li {
+.catalog-item__list_active ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.catalog-item__list_active ul li {
   position: relative;
   margin-bottom: 20px;
   font-weight: 300;
@@ -545,7 +547,7 @@
   display: flex;
   color: #555555;
 }
-.catalog-item__list li::before {
+.catalog-item__list_active ul li::before {
   content: "";
   position: absolute;
   background-color: #c70101;
@@ -562,7 +564,7 @@
   text-transform: uppercase;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
-  bottom: 0px;
+  bottom: 10px;
   left: 50%;
   -webkit-transform: translateX(calc(-50% - 10px));
           transform: translateX(calc(-50% - 10px));
@@ -609,8 +611,6 @@
 .reviews .reviews__around:hover {
   -webkit-animation-name: swing;
           animation-name: swing;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
 }
@@ -681,6 +681,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.footer iframe {
+  width: 100%;
+  height: 630;
 }
 
 .overlay {
