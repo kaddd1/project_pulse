@@ -1,6 +1,5 @@
 .catalog {
     padding-bottom: 100px;
-    &__content
     & &__tabs {
         margin-top: 70px;
         list-style-type: none;
@@ -99,6 +98,9 @@
             font-size: 14px;
             text-decoration-line: line-through;
             color: #555555;
+        }
+        &__prices {
+            width: 155px;
         }
         &__price {
             font-weight: 700;
